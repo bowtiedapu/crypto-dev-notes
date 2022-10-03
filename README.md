@@ -22,8 +22,18 @@ Notes taken as projects are built and courses are taken. This is starting out as
 - Chain selection and sybil resistance are 2 major components for a consensus mechanism.
 
 
+## EVM Deep Dive
+- For anyone reasonably experienced in programming at the beginner level, they should know that when a smart contract is compiled, the runtime bytecode generated contains all the functions defined in the contract.
+- When viewing the compiled runtime bytecode of the contract, we can view a subset of the bytecode and see how this corresponds to a set of what's called *EVM opcodes*
+- EVM opcodes are 1 byte in length, with 256 different possible opcodes (a finite set). The EVM only uses 140 unique opcodes.
+- When a smart contract's function is called, there is calldata provided to specify the function signature being called, along with the corresponding arguments.
+- Remember earlier how we mentioned the Keccak algorithm being used for Ethereum? The function signatures are defined as the first four bytes of the Keccak hash's canonical representation of the function signature.
+- Canoncial representation of function signatures is the following: function name, function argument type
+
 ## Helpful Links
 - https://www.youtube.com/watch?v=ZloHVKk7DHk
 - https://andersbrownworth.com/blockchain
 - eth-converter.com
 - https://www.youtube.com/watch?v=MGemhK9t44Q
+- EVM opcode references: https://www.ethervm.io/ https://www.evm.codes/?fork=grayGlacier
+- EVM deep dive
